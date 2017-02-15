@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLB Data", "MLB Data\MLB Data.csproj", "{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
