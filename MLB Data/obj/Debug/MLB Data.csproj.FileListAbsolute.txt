@@ -1,1 +1,7 @@
 C:\git\MLB Data\MLB Data\bin\Debug\MLB Data.exe.config
+C:\git\MLB-Data\MLB Data\bin\Debug\MLB Data.exe.config
+C:\git\MLB-Data\MLB Data\bin\Debug\MLB Data.exe
+C:\git\MLB-Data\MLB Data\bin\Debug\MLB Data.pdb
+C:\git\MLB-Data\MLB Data\obj\Debug\MLB Data.csprojResolveAssemblyReference.cache
+C:\git\MLB-Data\MLB Data\obj\Debug\MLB Data.exe
+C:\git\MLB-Data\MLB Data\obj\Debug\MLB Data.pdb

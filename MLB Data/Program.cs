@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace MLB_Data {
 	class Program {
 		static void Main(string[] args) {
-			Console.WriteLine("yo");
+			MLBWebClient client = new MLBWebClient();
+			Console.WriteLine(client.GetScoreBoard(2015, 12, 12));
 		}
 	}
 }
