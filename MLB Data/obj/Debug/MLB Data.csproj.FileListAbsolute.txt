@@ -1,4 +1,3 @@
-C:\git\MLB Data\MLB Data\bin\Debug\MLB Data.exe.config
 C:\git\MLB-Data\MLB Data\bin\Debug\MLB Data.exe.config
 C:\git\MLB-Data\MLB Data\bin\Debug\MLB Data.exe
 C:\git\MLB-Data\MLB Data\bin\Debug\MLB Data.pdb

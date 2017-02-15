@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace MLB_Data {
 	public class MLBWebClient {
@@ -14,30 +15,43 @@ namespace MLB_Data {
 		private const string ENDPOINT = @"http://gd2.mlb.com/components/game/mlb/";
 
 		private WebClient webClient;
-		public StringBuilder endPointBuilder;
 
 		public MLBWebClient() {
 			webClient = new WebClient();
-			endPointBuilder = new StringBuilder(ENDPOINT, 100);
 		}
-		public string GetScoreBoard(int year, int month, int day) {
-			return webClient.DownloadString(
-					endPointBuilder
-						.Append(GenerateYearPath(year))
-						.Append(GenerateMonthPath(month))
-						.Append(GenerateDayPath(day))
-						.Append(FILE_NAME)
-						.ToString()
-					);
+		public ScoreBoardData GetScoreBoard(int year, int month, int day) {
+			StringBuilder endPointBuilder = new StringBuilder(ENDPOINT, 90);
+			string address = endPointBuilder.Append(GenerateYearPath(year)).Append(GenerateMonthPath(month)).Append(GenerateDayPath(day)).Append(FILE_NAME).ToString();
+			Console.WriteLine(address + " " + address.Length);
+			string json = webClient.DownloadString(address).Replace("{}", "null"); //MLB treats {} as null
+
+			JsonSerializerSettings settings = new JsonSerializerSettings();
+			settings.MissingMemberHandling = MissingMemberHandling.Error;
+			settings.CheckAdditionalContent = true;
+			ScoreBoardData score = new ScoreBoardData();
+
+			try {
+				score = JsonConvert.DeserializeObject<ScoreBoardData>(json, settings);
+			} catch (Exception ex) {
+				Console.WriteLine(ex.Message);
+			}
+
+			return score;
 		}
 		private string GenerateYearPath(int year) {
 			return YEAR + year + "/";
 		}
 		private string GenerateMonthPath(int month) {
-			return MONTH + month + "/";
+			if (month < 10)
+				return MONTH +  "0" + month + "/";
+			else 
+				return MONTH + month + "/";
 		}
 		private string GenerateDayPath(int day) {
-			return DAY + day + "/";
+			if (day < 10)
+				return DAY + "0" + day + "/";
+			else
+				return DAY + day + "/";
 		}
 	}
 }
