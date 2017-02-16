@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MLB_Data {
 	public class ScoreBoardData {
 		public string subject { get; set; }
-		public string copyright { get; set; }
+		//public string copyright { get; set; } //Waste of memory
 		public Data data { get; set; }
 		public class Away {
 			public string tv { get; set; }
