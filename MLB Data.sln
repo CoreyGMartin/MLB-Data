@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLB Data", "MLB Data\MLB Data.csproj", "{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLB Scoreboard", "MLB Scoreboard\MLB Scoreboard.csproj", "{E2AE789C-8678-4D0C-8BBF-EE31E6979943}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLBDataLibrary", "MLBDataLibrary\MLBDataLibrary.csproj", "{1F804A33-A523-446A-B43B-0FF89402BE3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0E24FED-CBD9-4360-BA82-156F6BF1BF71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42B44EFB-361B-47B8-8984-86DFEC7E6FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2AE789C-8678-4D0C-8BBF-EE31E6979943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2AE789C-8678-4D0C-8BBF-EE31E6979943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2AE789C-8678-4D0C-8BBF-EE31E6979943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2AE789C-8678-4D0C-8BBF-EE31E6979943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F804A33-A523-446A-B43B-0FF89402BE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F804A33-A523-446A-B43B-0FF89402BE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F804A33-A523-446A-B43B-0FF89402BE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F804A33-A523-446A-B43B-0FF89402BE3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

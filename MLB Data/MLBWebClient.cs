@@ -22,11 +22,9 @@ namespace MLB_Data {
 		public ScoreBoardData GetScoreBoard(int year, int month, int day) {
 			StringBuilder endPointBuilder = new StringBuilder(ENDPOINT, 90);
 			string address = endPointBuilder.Append(GenerateYearPath(year)).Append(GenerateMonthPath(month)).Append(GenerateDayPath(day)).Append(FILE_NAME).ToString();
-			//Console.WriteLine(address + " " + address.Length);
 			string json = webClient.DownloadString(address).Replace("{}", "null"); //MLB api treats {} as null
 
 			ScoreBoardData score = JsonConvert.DeserializeObject<ScoreBoardData>(json);
-
 			/**
 			JsonSerializerSettings settings = new JsonSerializerSettings();
 			settings.MissingMemberHandling = MissingMemberHandling.Error;
