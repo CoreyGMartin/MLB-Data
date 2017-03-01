@@ -21,7 +21,7 @@ namespace MLBDataLibrary {
 		public MLBWebClient() {
 			webClient = new WebClient();
 		}
-		public ScoreBoardData GetScoreBoardsFromYear(int year, int month, int day) {
+		public ScoreBoardData GetScoreBoardsFromDay(int year, int month, int day) {
 			ScoreBoardData score = null;
 			StringBuilder endPointBuilder = new StringBuilder(ENDPOINT, 90);
 			string address = endPointBuilder.Append(GenerateYearPath(year)).Append(GenerateMonthPath(month)).Append(GenerateDayPath(day)).Append(FILE_NAME).ToString();

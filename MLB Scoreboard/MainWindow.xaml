@@ -5,78 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MLB_Scoreboard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" WindowStartupLocation="CenterScreen"
+        Title="MLB Scoreboard" Height="325" Width="848" WindowStartupLocation="CenterScreen"
 		ResizeMode="NoResize" Loaded="Window_Loaded" x:Name="Window">
     <Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
-			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="2*"/>
-			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="4*"/>
+			<ColumnDefinition Width="5*"/>
+			<ColumnDefinition Width="5*"/>
 		</Grid.ColumnDefinitions>
 
-		<ListBox x:Name="listBox" SelectionChanged="listBox_SelectionChanged" ItemsSource="{Binding}" HorizontalAlignment="Stretch"  Grid.RowSpan="3" VerticalAlignment="Stretch"/>
+		<ListBox x:Name="datesLstBx" SelectionChanged="datesLstBx_SelectionChanged" ItemsSource="{Binding}" HorizontalAlignment="Stretch"  Grid.RowSpan="2" VerticalAlignment="Stretch"/>
 
 		<StackPanel Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-			<ComboBox x:Name="yearsCmbBx" SelectionChanged="yearsCmbBx_SelectionChanged" Margin="10" Width="100" />
-			<Label x:Name="statusLbl" Content="Status: " Width="100" Margin="0, 8" />
-			<ProgressBar x:Name="progressBar" Minimum="0" Maximum="100" Height="18" Width="400" />
-			<Label Content="Game: " Width="50" Margin="5, 8" />
-			<ComboBox x:Name="gameCmbBx" Margin="0, 10" Width="300" />
-			<TextBlock Margin="1, 2, 5, 2" Text="{Binding CurrentGame}"/>
+			<Label x:Name="yearLbl" Content="Year: " FontWeight="Bold" Margin="0, 8" />
+			<ComboBox x:Name="yearsCmbBx" SelectionChanged="yearsCmbBx_SelectionChanged" Margin="0, 10, 10, 10" Width="100" />
+			<Label x:Name="statusLbl" Content="Status: " FontWeight="Bold" Margin="0, 8" />
+			<Label x:Name="statusTextLbl" Width="350" Margin="0, 8" />
 		</StackPanel>
 
 
 		<!-- Start Display contents -->
 		<StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="0, 50, 0, 0">
-			<GroupBox Header="MLB Master Score Board" Margin="2">
+			<GroupBox Header="MLB Master Score Board" FontSize="16" Margin="2">
 				<Grid>
 					<Grid.RowDefinitions>
 						<RowDefinition Height="Auto"/>
 						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
 					</Grid.RowDefinitions>
 					<StackPanel Orientation="Horizontal">
-						<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="next_day_date:"/>
-						<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=listBox, Path=SelectedItem.data.games.next_day_date}"/>
-
-						<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="modified_date:"/>
-						<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=listBox, Path=SelectedItem.data.games.modified_date}"/>
-
-						<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="month:"/>
-						<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=listBox, Path=SelectedItem.data.games.month}"/>
-
-						<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="year:"/>
-						<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=listBox, Path=SelectedItem.data.games.year}"/>
+						<TextBlock Text="Game:" Margin="8" />
+						<ComboBox x:Name="gameCmbBx" Width="450" Margin="5" />
 					</StackPanel>
-					<GroupBox Grid.Row="1" Header="Game">
-						<StackPanel Orientation="Horizontal">
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="game_type:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.game_type}"/>
-
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="double_header_sw:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.double_header_sw}"/>
-
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="location:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.location}"/>
-
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="away_time:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.away_time}"/>
-
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="away_league_id_spring:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.away_league_id_spring}"/>
-
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="time:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.time}"/>
-
-							<TextBlock Margin="5, 2, 1, 2" FontWeight="Bold" Text="home_time:"/>
-							<TextBlock Margin="1, 2, 5, 2" Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.home_time}"/>
-
+					<Grid Grid.Row="1" ShowGridLines="True" Background="AliceBlue">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="3*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<!-- Scoreboard -->
+						
+						<!-- Row 0 -->
+						<TextBlock Text="Final" FontWeight="Bold" HorizontalAlignment="Left" Margin="8"/>
+						<TextBlock Text="R" FontWeight="Bold" HorizontalAlignment="Center" Margin="8" Grid.Column="1"/>
+						<TextBlock Text="H" FontWeight="Bold" HorizontalAlignment="Center" Margin="8" Grid.Column="2"/>
+						<TextBlock Text="E" FontWeight="Bold" HorizontalAlignment="Center" Margin="8" Grid.Column="3"/>
+						
+						<!-- Row 1 -->
+						<StackPanel Grid.Row="1" Orientation="Horizontal">
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.home_team_city}" HorizontalAlignment="Center" Margin="0, 8"/>
+							<TextBlock Margin="0, 8" Text=", " />
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.home_team_name}" HorizontalAlignment="Center" Margin="0, 8"/>
 						</StackPanel>
-					</GroupBox>
+						<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.linescore.r.home}" HorizontalAlignment="Center" Margin="0, 8" Grid.Row="1" Grid.Column="1"/>
+						<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.linescore.h.home}" HorizontalAlignment="Center" Margin="0, 8" Grid.Row="1" Grid.Column="2"/>
+						<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.linescore.e.home}" HorizontalAlignment="Center" Margin="0, 8" Grid.Row="1" Grid.Column="3"/>
+
+						<!-- Row 2 -->
+						<StackPanel Grid.Row="2" Orientation="Horizontal">
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.away_team_city}" HorizontalAlignment="Center" Margin="0, 8"/>
+							<TextBlock Margin="0, 8" Text=", " />
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.away_team_name}" HorizontalAlignment="Center" Margin="0, 8"/>
+						</StackPanel>
+						<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.linescore.r.away}" HorizontalAlignment="Center" Margin="0, 8" Grid.Row="2" Grid.Column="1"/>
+						<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.linescore.h.away}" HorizontalAlignment="Center" Margin="0, 8" Grid.Row="2" Grid.Column="2"/>
+						<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.linescore.e.away}" HorizontalAlignment="Center" Margin="0, 8" Grid.Row="2" Grid.Column="3"/>
+					</Grid>
+					<StackPanel Grid.Row="2">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Winning Pitch: " Margin="2" FontWeight="Bold"/>
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.winning_pitcher.first}" Margin="2" />
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.winning_pitcher.last}" Margin="2" />
+						</StackPanel>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Text="Losing Pitch: " Margin="2" FontWeight="Bold"/>
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.losing_pitcher.first}" Margin="2" />
+							<TextBlock Text="{Binding ElementName=gameCmbBx, Path=SelectedItem.losing_pitcher.last}" Margin="2" />
+						</StackPanel>
+					</StackPanel>
 				</Grid>
 			</GroupBox>
 		</StackPanel>

@@ -123,6 +123,7 @@ namespace MLBDataLibrary {
 			public So so { get; set; }
 			public R r { get; set; }
 			public Sb sb { get; set; }
+			[JsonConverter(typeof(SingleOrArrayConverter<Inning>))]
 			public List<Inning> inning { get; set; }
 			public H h { get; set; }
 		}
@@ -157,6 +158,7 @@ namespace MLBDataLibrary {
 		}
 
 		public class VideoThumbnails {
+			[JsonConverter(typeof(SingleOrArrayConverter<Thumbnail>))]
 			public List<Thumbnail> thumbnail { get; set; }
 		}
 
@@ -248,7 +250,7 @@ namespace MLBDataLibrary {
 			public string away_division { get; set; }
 			public HomeRuns home_runs { get; set; }
 			public override string ToString() {
-				return home_team_name + " vs " + away_team_name ;
+				return home_team_city + ", " + home_team_name + " vs " + away_team_city + ", " + away_team_name;
 			}
 		}
 
